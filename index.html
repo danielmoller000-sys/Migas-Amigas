@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<!-- Etiqueta principal de la página, lang="es" indica el idioma-->
+<html lang="es">
+
+<!-- Datos de la página  -->
+<head>
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Migas Amigas - Panadería</title>
+    <!-- Permite la nomenclatura española -->
+    <meta charset="UTF-8">
+    <!-- Conecta la página con la carpeta CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<!-- Todo lo que se ve en la página -->
+<body>
+<!-- Cabecera: nombre del negocio y gif -->
+<header>
+    <h1>Migas Amigas</h1>
+    <div class="animacion-pan">
+        <!-- Gif de elaboración del pan -->
+        <img src="img/bread-breadmaking.gif" alt="Animación ilustrada del proceso de elaboración del pan artesanal" />
+    </div>
+</header>
+
+<!-- Menú para moverse entre las páginas de la web -->
+<nav>
+    <!-- Lista con los enlaces del menú -->
+    <ul>
+        <li>
+            <a href="index.html">Inicio / Panadería</a>
+        </li>
+        <li>
+            <a href="pasteleria.html">Pastelería-bollería</a>
+        </li>
+        <li>
+            <a href="empanadas.html">Empanadas</a>
+        </li>
+        <!-- Enlace que lleva directamente a contacto -->
+        <li>
+            <a href="index.html#contacto">Contacto</a>
+        </li>
+    </ul>
+
+    <!-- Botones para cambiar de idioma (castellano / portugués) -->
+    <div class="idiomas">
+        <button type="button" onclick="traducir('pt')">&#127477;&#127481; Português</button>
+        <button type="button" onclick="traducir('es')">&#127466;&#127480; Español</button>
+
+        <!-- Contenedor oculto del widget de Google Translate -->
+        <div id="google_translate_element" style="display:none"></div>
+
+        <script>
+            // Configura el traductor: página original en español, idiomas permitidos es y pt
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'es',
+                    includedLanguages: 'es,pt',
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
+
+            // Cambia el idioma seleccionando el valor en el desplegable oculto de Google
+            function traducir(idioma) {
+                const combo = document.querySelector('.goog-te-combo');
+                if (combo) {
+                    combo.value = idioma;
+                    combo.dispatchEvent(new Event('change'));
+                }
+            }
+        </script>
+        <!-- Carga el script de Google Translate -->
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+</nav>
+
+<!-- Contenido principal de la página -->
+<main>
+
+    <!-- Sección de introducción sobre cómo se elabora el pan -->
+    <section>
+        <h2>Elaboración del pan</h2>
+        <p>¡Bienvenidos a nuestra panadería! Para crear el pan artesanal perfecto en casa, solo necesitas ingredientes
+            seleccionados, paciencia y mucho amor. Combinamos la mejor harina de trigo con agua pura, levadura y un
+            toque de sal para dar vida a una masa madre que dejamos reposar sin prisa, permitiendo que desarrolle aromas
+            y texturas inigualables. Tras un amasado tradicional a mano, cada pieza entra al horno de piedra para salir
+            con una corteza dorada y crujiente y una miga increíblemente esponjosa que llenará tu hogar con el
+            irresistible olor a pan recién horneado.</p>
+    </section>
+
+    <!-- Sección con el catálogo de panes (el id sirve para identificarla en el nav) -->
+    <section id="panaderia">
+        <h2>Panadería</h2>
+        <p>En esta sección, encontrarás todos nuestros panes.</p>
+
+        <!-- Producto 1 -->
+        <!-- Cada producto va en un article con su nombre, descripción y tabla -->
+        <article>
+            <!-- Nombre del producto -->
+            <h3>Pan de espelta tradicional</h3>
+
+            <p>Elaborado con harina de espelta, un cereal rico en fibra y fácil de digerir, que permite obtener un pan integral de textura suave y sabor tradicional.</p>
+
+            <!-- Tabla con tres columnas: ingredientes, elaboración y fotografía -->
+            <table>
+                <!-- Fila de encabezados -->
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <!-- Fila con los datos del producto -->
+                <tr>
+                    <td>
+                        <!-- Lista de ingredientes -->
+                        <ul>
+                            <li>Harina de espelta</li>
+                            <li>Agua</li>
+                            <li>Levadura</li>
+                            <li>Sal</li>
+                            <li>Aceite de oliva</li>
+                        </ul>
+                    </td>
+                    <!-- Celda con el proceso de elaboración -->
+                    <td>
+                        <p>Mezcla la harina de espelta con la sal y añade el agua tibia con la levadura. Amasa durante 10-15 minutos
+                            hasta obtener una masa lisa y elástica. Déjala fermentar unos 45-60 minutos hasta que duplique su tamaño.
+                            Después, vuelve a amasar, dale forma y deja reposar otros 30-40 minutos. Finalmente, hornea a 200 ºC durante
+                            unos 30-40 minutos, hasta que el pan esté dorado y suene hueco al golpear la base.</p>
+                    </td>
+                    <!-- Celda con la foto del producto -->
+                    <td>
+                        <img src="img/pan_espelta.jpg" alt="Pan de espelta tradicional"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- El resto de productos siguen exactamente la misma estructura -->
+        <!-- Producto 2 -->
+        <article>
+            <h3>Pan rústico de masa madre</h3>
+            <p>Pan de pueblo elaborado con masa madre de cultivo propio, de fermentación lenta de 24 horas y cocido en horno de piedra.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo de fuerza</li>
+                            <li>Masa madre natural</li>
+                            <li>Agua mineral</li>
+                            <li>Sal marina</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se realiza el autolisis de harina y agua durante 1 hora. Se incorpora la masa madre y la sal, amasando mediante pliegues. Fermentación en bloque durante 18 horas en frío, formado a mano y horneado sobre suela de piedra a 230 ºC con vapor.</p>
+                    </td>
+                    <td>
+                        <img src="img/pan_rustico.jpg" alt="Pan rústico de masa madre"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 3 -->
+        <article>
+            <h3>Baguette artesanal tradicional</h3>
+            <p>Clásica barra de estilo francés, con una corteza fina y muy crujiente, y una miga alveolada y suave.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo T65</li>
+                            <li>Agua</li>
+                            <li>Masa previa (prefermento)</li>
+                            <li>Levadura fresca</li>
+                            <li>Sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Amasado suave para conservar la estructura. Reposo en bloque de 2 horas. Formado en barras alargadas con cortes inclinados (greñado) en la superficie. Horneado a alta temperatura con vapor intenso durante 22 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/baguette_artesanal.jpg" alt="Baguette artesanal tradicional"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 4 -->
+        <article>
+            <h3>Pan de centeno integral</h3>
+            <p>Pan denso y nutritivo, ideal para tostadas saladas. Destaca por su sabor ligeramente ácido y su alto contenido en fibra.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina integral de centeno</li>
+                            <li>Masa madre de centeno</li>
+                            <li>Agua</li>
+                            <li>Sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Mezcla rápida sin amasado prolongado debido al bajo contenido de gluten del centeno. Reposo largo en molde de madera. Horneado progresivo empezando a 240 ºC y bajando a 200 ºC durante 50 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/pan_centeno_artesanal.jpg" alt="Pan de centeno integral"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 5 -->
+        <article>
+            <h3>Hogaza de pueblo multigranos</h3>
+            <p>Hogaza elaborada con una mezcla de cereales y cubierta con una generosa capa de semillas tostadas.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo y avena</li>
+                            <li>Semillas de pipas de girasol, sésamo y lino</li>
+                            <li>Agua</li>
+                            <li>Levadura</li>
+                            <li>Sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Las semillas se rehidratan previamente. Se incorporan a la masa al final del amasado. Tras la segunda fermentación, se reboza la corteza en semillas y se hornea a 210 ºC durante 40 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/hogaza_multigranos.jpg" alt="Hogaza de pueblo multigranos"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 6 -->
+        <article>
+            <h3>Pan de molde artesanal de leche</h3>
+            <p>Pan suave, tierno y sin conservantes artificiales, perfecto para el desayuno de toda la familia.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo</li>
+                            <li>Leche entera</li>
+                            <li>Mantequilla</li>
+                            <li>Azúcar</li>
+                            <li>Levadura y sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Amasado intensivo hasta conseguir una masa elástica. Se coloca en moldes alargados rectangulares y se deja fermentar hasta doblar su volumen. Se hornea suavemente a 180 ºC durante 30 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/pan_molde_leche.jpg" alt="Pan de molde artesanal de leche"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 7 -->
+        <article>
+            <h3>Pan de maíz y pipas de calabaza</h3>
+            <p>Pan de miga dorada, sabrosa y húmeda, típico por su toque dulce natural aportado por la harina de maíz.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de maíz amarillo</li>
+                            <li>Harina de trigo</li>
+                            <li>Pipas de calabaza</li>
+                            <li>Agua hirviendo</li>
+                            <li>Levadura y sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se escalda la harina de maíz con agua hirviendo para liberar sus azúcares. Una vez fría, se mezcla con la harina de trigo y las pipas. Se le da forma redonda y se hornea a 200 ºC durante 45 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/pan_maiz_pipas.jpg" alt="Pan de maíz y pipas de calabaza"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 8 -->
+        <article>
+            <h3>Pan candeal o sobado</h3>
+            <p>El tradicional pan castellano de miga densa, blanca y apretada, con corteza lisa y dorada.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo candeal (baja hidratación)</li>
+                            <li>Agua</li>
+                            <li>Masa madre corta</li>
+                            <li>Sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Masa de baja hidratación afinada mediante cilindros refinadores (sobado). Se corta la masa formando figuras tradicionales y se le realizan cortes profundos antes de hornear a 190 ºC sin humedad.</p>
+                    </td>
+                    <td>
+                        <img src="img/pan_candeal_sobado.jpg" alt="Pan candeal o sobado"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 9 -->
+        <article>
+            <h3>Pan de aceitunas negras y romero</h3>
+            <p>Pan aromático de inspiración mediterránea, ideal para acompañar quesos y embutidos.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo</li>
+                            <li>Aceitunas negras troceadas</li>
+                            <li>Romero fresco picado</li>
+                            <li>Aceite de oliva virgen extra</li>
+                            <li>Agua, levadura y sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Amasado tradicional donde se agregan al final del proceso las aceitunas troceadas y el romero fresco. Fermentación media en cestos de mimbre (bannetons) y horneado a 210 ºC durante 35 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/pan_aceitunas_romero.jpg" alt="Pan de aceitunas negras y romero"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 10 -->
+        <article>
+            <h3>Pan integral 100% de grano entero</h3>
+            <p>Elaborado exclusivamente con harina de trigo integral molida a la piedra, conservando todo el salvado y germen.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina integral 100% de trigo molida a piedra</li>
+                            <li>Agua</li>
+                            <li>Masa madre integral</li>
+                            <li>Sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Requiere mayor hidratación por la absorción del salvado. Se realiza un amasado suave y reposo prolongado de 12 horas para facilitar la digestión. Se hornea a 200 ºC durante 45 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/pan_integral.jpg" alt="Pan integral 100% de grano entero"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 11 -->
+        <article>
+            <h3>Ciabatta / Chapata artesanal</h3>
+            <p>Pan de origen italiano caracterizado por su altísima hidratación, miga muy alveolada y corteza crujiente.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de gran fuerza</li>
+                            <li>Agua (80% de hidratación)</li>
+                            <li>Prefermento Biga</li>
+                            <li>Levadura, sal y aceite de oliva</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Amasado largo con alta hidratación. Múltiples pliegues durante la fermentación en cubetas. Se vierten las porciones sobre harina sin desgasar y se hornean directamente a 230 ºC con vapor fuerte.</p>
+                    </td>
+                    <td>
+                        <img src="img/ciabatta_chapata.jpg" alt="Ciabatta / Chapata artesanal"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 12 -->
+        <article>
+            <h3>Pan de nueces y pasas</h3>
+            <p>Especialidad dulce-salada ideal para maridar con quesos suaves, patés o para consumir en el desayuno.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina semiintegral</li>
+                            <li>Nueces troceadas</li>
+                            <li>Pasas sultanas rehidratadas</li>
+                            <li>Agua, levadura y sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se mezcla la harina con el agua y la sal. Se añaden las nueces y pasas al final para no romper los frutos. Formado en barrotines alargados y horneado a 200 ºC durante 35 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/pan_nueces.jpg" alt="Pan de nueces y pasas"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+    </section>
+
+    <!-- Sección de contacto: dirección, teléfono y croquis -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+
+        <h3>Cómo encontrarnos</h3>
+        <p>Nos encontramos en Badajoz, muy cerca de la frontera con Portugal. Puedes llegar fácilmente desde el centro
+            de Badajoz siguiendo la carretera en dirección a Portugal. Siendo la zona señalada en rojo
+            en la imagen de abajo.</p>
+
+        <!-- <br/> hace un salto de línea dentro del mismo párrafo -->
+        <p>Migas Amigas<br/>
+            Avenida de Portugal, 10<br/>
+            06000 Badajoz, España</p>
+
+        <p>Teléfono: 924 000 000</p>
+
+        <h3>Croquis de ubicación</h3>
+        <!-- Imagen con el mapa de ubicación -->
+        <img src="img/croquis.png" alt="Croquis de ubicación de la panadería Migas Amigas en Badajoz" />
+
+    </section>
+
+</main>
+
+<!-- Pie de página con el copyright -->
+<footer>
+    <p>&copy; 2026 Migas Amigas - Panadería familiar</p>
+    <p>Pan artesanal, pastelería-bollería y empanadas</p>
+</footer>
+
+</body>
+</html>

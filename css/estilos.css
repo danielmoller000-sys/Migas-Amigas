@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Nunito:wght@400;600;700&display=swap");
+ 
+/*Variables de color*/
+:root {
+    --cacao: #4a2f22;          /*marrón oscuro: texto y cabecera*/
+    --canela: #8a5a3c;         /*marrón medio: títulos y detalles*/
+    --tostado: #c99a6b;        /*marrón claro: bordes*/
+    --crema: #fbf3e6;          /*fondo general*/
+    --leche: #fffaf2;          /*fondo de las tarjetas*/
+ 
+    --rosa: #f6d5d5;           /*pastel rosa*/
+    --menta: #d6ead9;          /*pastel menta*/
+    --mantequilla: #faecb8;    /*pastel amarillo*/
+    --lavanda: #e3dcf0;        /*pastel lavanda*/
+ 
+    --fuente-titulos: "Fraunces", Georgia, "Times New Roman", serif;
+    --fuente-texto: "Nunito", "Trebuchet MS", Verdana, sans-serif;
+}
+ 
+/*Base*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+ 
+html {
+    scroll-behavior: smooth;
+}
+ 
+body {
+    margin: 0;
+    font-family: var(--fuente-texto);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: var(--cacao);
+    background-color: var(--crema);
+}
+ 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+ 
+a {
+    color: var(--canela);
+}
+ 
+a:focus-visible {
+    outline: 3px solid var(--canela);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+ 
+/*Cabecera*/
+header {
+    background-color: var(--cacao);
+    color: var(--crema);
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+    border-bottom: 6px solid var(--tostado);
+}
+ 
+header h1 {
+    margin: 0 0 1rem;
+    font-family: var(--fuente-titulos);
+    font-size: clamp(2.4rem, 7vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+ 
+.animacion-pan {
+    display: flex;
+    justify-content: center;
+}
+ 
+.animacion-pan img {
+    max-height: 170px;
+    width: auto;
+    border-radius: 16px;
+    border: 4px solid var(--mantequilla);
+    background-color: var(--leche);
+}
+ 
+/*Navegación*/
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--rosa);
+    border-bottom: 2px solid var(--tostado);
+}
+ 
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+ 
+nav ul a {
+    display: block;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    background-color: var(--leche);
+    color: var(--cacao);
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+ 
+nav ul a:hover {
+    background-color: var(--mantequilla);
+    border-color: var(--canela);
+}
+ 
+.idiomas {
+    display: flex;
+    gap: 0.5rem;
+}
+ 
+.idiomas a {
+    padding: 0.25rem 0.75rem;
+    border-radius: 8px;
+    background-color: var(--menta);
+    color: var(--cacao);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+ 
+.idiomas a:hover,
+.idiomas button:hover {
+    background-color: var(--lavanda);
+}
+
+/*Botones de idioma (Google Translate)*/
+.idiomas button {
+    padding: 0.25rem 0.75rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: var(--menta);
+    color: var(--cacao);
+    font-family: var(--fuente-texto);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+ 
+/*Contenido principal*/
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+}
+ 
+main section {
+    margin-bottom: 3rem;
+}
+ 
+main h2 {
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.4rem;
+    font-family: var(--fuente-titulos);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--canela);
+    border-bottom: 3px dashed var(--tostado);
+}
+ 
+main h3 {
+    margin: 0 0 0.5rem;
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    color: var(--cacao);
+}
+ 
+main p {
+    max-width: 70ch;
+    margin: 0 0 1rem;
+}
+ 
+/*Productos (tarjetas)*/
+article {
+    margin-top: 1.75rem;
+    padding: 1.5rem;
+    background-color: var(--leche);
+    border: 2px solid var(--tostado);
+    border-left-width: 12px;
+    border-radius: 18px;
+    box-shadow: 0 4px 0 rgba(138, 90, 60, 0.18);
+}
+ 
+/*Cada producto con un pastel distinto en el borde izquierdo*/
+article:nth-of-type(4n + 1) { border-left-color: var(--rosa); }
+article:nth-of-type(4n + 2) { border-left-color: var(--menta); }
+article:nth-of-type(4n + 3) { border-left-color: var(--mantequilla); }
+article:nth-of-type(4n + 4) { border-left-color: var(--lavanda); }
+ 
+/*Tablas*/
+table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    border: 2px solid var(--tostado);
+    border-radius: 12px;
+    overflow: hidden;
+}
+ 
+th {
+    padding: 0.7rem 1rem;
+    background-color: var(--canela);
+    color: var(--leche);
+    font-family: var(--fuente-titulos);
+    font-size: 1.05rem;
+    text-align: left;
+}
+ 
+td {
+    padding: 1rem;
+    vertical-align: top;
+    background-color: var(--crema);
+}
+ 
+th + th,
+td + td {
+    border-left: 2px solid var(--tostado);
+}
+ 
+td p {
+    margin: 0;
+}
+ 
+td ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+ 
+td li {
+    margin-bottom: 0.25rem;
+}
+ 
+td li::marker {
+    color: var(--canela);
+}
+ 
+td img {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 3px solid var(--mantequilla);
+}
+ 
+/*Contacto*/
+#contacto {
+    padding: 1.5rem;
+    background-color: var(--menta);
+    border: 2px solid var(--tostado);
+    border-radius: 18px;
+}
+ 
+#contacto h2 {
+    border-bottom-color: var(--canela);
+}
+ 
+#contacto img {
+    max-width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 12px;
+    border: 3px solid var(--leche);
+}
+ 
+/*Pie de página*/
+footer {
+    padding: 1.5rem 1rem;
+    background-color: var(--cacao);
+    color: var(--crema);
+    text-align: center;
+    border-top: 6px solid var(--tostado);
+}
+ 
+footer p {
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+}
+ 
+/*Adaptación a móvil*/
+@media (max-width: 720px) {
+    nav {
+        position: static;
+        justify-content: center;
+    }
+ 
+    nav ul {
+        justify-content: center;
+    }
+ 
+    article {
+        padding: 1rem;
+    }
+ 
+    /*La tabla pasa a bloques apilados*/
+    table,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+ 
+    tr:first-child {
+        display: none; /* se ocultan los th, la etiqueta se pone con ::before */
+    }
+ 
+    td + td {
+        border-left: none;
+        border-top: 2px solid var(--tostado);
+    }
+ 
+    td::before {
+        display: block;
+        margin-bottom: 0.4rem;
+        font-family: var(--fuente-titulos);
+        font-weight: 700;
+        color: var(--canela);
+    }
+ 
+    td:nth-child(1)::before { content: "Ingredientes"; }
+    td:nth-child(2)::before { content: "Elaboración"; }
+    td:nth-child(3)::before { content: "Fotografía"; }
+}
+ 
+/*Accesibilidad*/
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+ 
+    * {
+        transition: none !important;
+    }
+}
+ 

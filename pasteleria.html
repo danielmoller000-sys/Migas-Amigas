@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!-- Etiqueta principal de la página, lang="es" indica el idioma-->
+<html lang="es">
+
+<!-- Datos de la página que no se ven en pantalla -->
+<head>
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Migas Amigas - Pastelería y Bollería</title>
+     <!-- Permite la nomenclatura española -->
+    <meta charset="UTF-8">
+    <!-- Conecta la página con la carpeta CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<!-- Todo lo que se ve en la página -->
+<body>
+<!-- Cabecera: nombre del negocio y gif -->
+<header>
+    <h1>Migas Amigas</h1>
+    <div class="animacion-pan">
+          <!-- Gif de elaboración del pan -->
+        <img src="img/bread-breadmaking.gif" alt="Animación ilustrada del proceso de elaboración del pan artesanal" />
+    </div>
+</header>
+
+<!-- Menú para moverse entre las páginas de la web -->
+<nav>
+    <!-- Lista con los enlaces del menú -->
+    <ul>
+        <li>
+            <a href="index.html">Inicio / Panadería</a>
+        </li>
+        <li>
+            <a href="pasteleria.html">Pastelería-bollería</a>
+        </li>
+        <li>
+            <a href="empanadas.html">Empanadas</a>
+        </li>
+        <!-- Enlace que lleva directamente a la sección de contacto -->
+        <li>
+            <a href="index.html#contacto">Contacto</a>
+        </li>
+    </ul>
+
+    <!-- Botones para cambiar de idioma (castellano / portugués) -->
+    <div class="idiomas">
+        <button type="button" onclick="traducir('pt')">&#127477;&#127481; Português</button>
+        <button type="button" onclick="traducir('es')">&#127466;&#127480; Español</button>
+
+        <!-- Contenedor oculto del widget de Google Translate -->
+        <div id="google_translate_element" style="display:none"></div>
+
+        <script>
+            // Configura el traductor: página original en español, idiomas permitidos es y pt
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'es',
+                    includedLanguages: 'es,pt',
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
+
+            // Cambia el idioma seleccionando el valor en el desplegable oculto de Google
+            function traducir(idioma) {
+                const combo = document.querySelector('.goog-te-combo');
+                if (combo) {
+                    combo.value = idioma;
+                    combo.dispatchEvent(new Event('change'));
+                }
+            }
+        </script>
+        <!-- Carga el script de Google Translate -->
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+</nav>
+
+<!-- Contenido principal de la página -->
+<main>
+
+    <!-- Sección con el catálogo de pastelería y bollería -->
+    <section id="pasteleria">
+        <h2>Pastelería-bollería</h2>
+        <p>En esta sección, encontrarás todos nuestros pasteles y nuestra bollería.</p>
+
+        <!-- Producto 1 -->
+        <!-- Cada producto va en un article con su nombre, descripción y tabla -->
+        <article>
+            <!-- Nombre del producto -->
+            <h3>Croissant artesanal de mantequilla</h3>
+            <p>Crujiente por fuera y hojaldrado por dentro, elaborado con mantequilla artesanal siguiendo la receta tradicional.</p>
+            <!-- Tabla con tres columnas: ingredientes, elaboración y fotografía -->
+            <table>
+                <!-- Fila de encabezados -->
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <!-- Fila con los datos del producto -->
+                <tr>
+                    <td>
+                        <!-- Lista de ingredientes -->
+                        <ul>
+                            <li>Harina de fuerza</li>
+                            <li>Mantequilla</li>
+                            <li>Leche</li>
+                            <li>Azúcar</li>
+                            <li>Levadura fresca y sal</li>
+                        </ul>
+                    </td>
+                    <!-- Celda con el proceso de elaboración -->
+                    <td>
+                        <p>Se prepara la masa y se deja reposar. Se incorpora la mantequilla mediante plegados sucesivos para lograr el hojaldrado. Se cortan los triángulos, se dan forma y se hornean a 190 ºC hasta dorar.</p>
+                    </td>
+                    <!-- Celda con la foto del producto -->
+                    <td>
+                        <img src="img/croissant.jpg" alt="Croissant artesanal de mantequilla"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- El resto de productos siguen exactamente la misma estructura -->
+        <!-- Producto 2 -->
+        <article>
+            <h3>Napolitana de chocolate</h3>
+            <p>Hojaldre tierno horneado cada mañana y relleno con dos barras de cremoso chocolate negro.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Masa de hojaldre</li>
+                            <li>Mantequilla</li>
+                            <li>Chocolate negro 55%</li>
+                            <li>Huevo para pincelar</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se estira la masa de hojaldre en rectángulos, se envuelven las barritas de chocolate, se pintan con huevo batido y se hornean a 200 ºC durante 18 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/napolitana.jpg" alt="Napolitana de chocolate"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 3 -->
+        <article>
+            <h3>Ensaimada tradicional</h3>
+            <p>Masa enroscada en espiral, esponjosa y ligera, espolvoreada con abundante azúcar glas.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de fuerza</li>
+                            <li>Manteca de cerdo</li>
+                            <li>Huevos</li>
+                            <li>Azúcar y levadura</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se estira la masa muy fina, se unta con manteca de cerdo, se enrolla en cilindro y luego en forma de espiral. Larga fermentación de 12 horas antes de hornear a 180 ºC.</p>
+                    </td>
+                    <td>
+                        <img src="img/ensaimada_tradicional.jpg" alt="Ensaimada tradicional"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 4 -->
+        <article>
+            <h3>Palmera de hojaldre caramelizada</h3>
+            <p>Crujiente palmera de hojaldre horneada con capa de azúcar caramelizado en los bordes.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo</li>
+                            <li>Mantequilla</li>
+                            <li>Azúcar blanquilla</li>
+                            <li>Agua y sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se plega el hojaldre espolvoreando abundante azúcar entre capa y capa. Se cortan rodajas de la masa enrollada y se hornean a 210 ºC voltiándolas para caramelizar ambos lados.</p>
+                    </td>
+                    <td>
+                        <img src="img/palmera_hojaldre.jpg" alt="Palmera de hojaldre caramelizada"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 5 -->
+        <article>
+            <h3>Muffin de arándanos y limón</h3>
+            <p>Bizcocho jugoso y esponjoso repleto de arándanos frescos y un sutil aroma a ralladura de limón.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de repostería</li>
+                            <li>Arándanos frescos</li>
+                            <li>Ralladura de limón</li>
+                            <li>Aceite de girasol, huevos y leche</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se mezclan los ingredientes secos por un lado y los líquidos por otro. Se unen suavemente sin batir en exceso, se añaden los arándanos y se hornea en tulipas de papel a 190 ºC por 22 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/muffin_arandanos.jpg" alt="Muffin de arándanos y limón"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 6 -->
+        <article>
+            <h3>Pastel de crema catalana / Belém</h3>
+            <p>Cazoleta de hojaldre muy crujiente rellena de crema pastelera horneada y dorada en la superficie.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Masa de hojaldre</li>
+                            <li>Yemas de huevo</li>
+                            <li>Leche y nata</li>
+                            <li>Azúcar, canela y piel de limón</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se forran moldes metálicos con hojaldre. Se vierte la crema infusionada con canela y limón y se hornea a muy alta temperatura (250 ºC) durante pocos minutos para dorar la superficie.</p>
+                    </td>
+                    <td>
+                        <img src="img/pastel_crema_belem.jpg" alt="Pastel de crema catalana o Belém"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 7 -->
+        <article>
+            <h3>Donut / Rosquilla glaseada tradicional</h3>
+            <p>Rosquilla frita esponjosa con una fina y crujiente cobertura de glaseado de azúcar.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de gran fuerza</li>
+                            <li>Mantequilla, leche y huevos</li>
+                            <li>Azúcar glass para el glaseado</li>
+                            <li>Levadura fresca y vainilla</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Masa fermentada cortada en aros. Tras un segundo reposo, se fríen en aceite suave hasta dorar ambos lados. Se escurren y se sumergen aún tibios en el baño de glaseado de azúcar.</p>
+                    </td>
+                    <td>
+                        <img src="img/donut_glaseado.jpg" alt="Donut / Rosquilla glaseada tradicional"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 8 -->
+        <article>
+            <h3>Tarta artesanal de manzana</h3>
+            <p>Porción de tarta sobre base de masa quebrada, crema pastelera y láminas de manzana doradas al horno.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Masa quebrada (brisa)</li>
+                            <li>Manzanas tipo Reineta</li>
+                            <li>Crema pastelera</li>
+                            <li>Mermelada de albaricoque para dar brillo</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se extiende la masa en el molde, se cubre con crema pastelera y se disponen las manzanas laminadas. Se hornea a 180 ºC durante 40 minutos y se pincela con mermelada caliente.</p>
+                    </td>
+                    <td>
+                        <img src="img/tarta.jpg" alt="Tarta artesanal de manzana"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+    </section>
+
+</main>
+
+<!-- Pie de página con el copyright -->
+<footer>
+    <p>&copy; 2026 Migas Amigas - Panadería familiar</p>
+    <p>Pan artesanal, pastelería-bollería y empanadas</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<!-- Etiqueta principal de la página, lang="es" indica el idioma -->
+<html lang="es">
+
+<!-- Datos de la página-->
+<head>
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Migas Amigas - Empanadas</title>
+    <!-- nomenclatura española -->
+    <meta charset="UTF-8">
+    <!-- Conecta la página con la carpeta CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<!-- Todo lo que se ve en la página -->
+<body>
+<!-- Cabecera: nombre del negocio y gif -->
+<header>
+    <h1>Migas Amigas</h1>
+    <div class="animacion-pan">
+        <!-- Gif sobre elaboración del pan -->
+        <img src="img/bread-breadmaking.gif" alt="Animación ilustrada del proceso de elaboración del pan artesanal" />
+    </div>
+</header>
+
+<!-- Menú para moverse entre las páginas de la web -->
+<nav>
+    <!-- Lista con los enlaces del menú para moverse a cada una de las páginas -->
+    <ul>
+        <li>
+            <a href="index.html">Inicio / Panadería</a>
+        </li>
+        <li>
+            <a href="pasteleria.html">Pastelería-bollería</a>
+        </li>
+        <li>
+            <a href="empanadas.html">Empanadas</a>
+        </li>
+        <!-- Enlace que lleva directamente a contacto -->
+        <li>
+            <a href="index.html#contacto">Contacto</a>
+        </li>
+    </ul>
+
+    <!-- Botones para cambiar de idioma (castellano / portugués) -->
+    <div class="idiomas">
+        <button type="button" onclick="traducir('pt')">&#127477;&#127481; Português</button>
+        <button type="button" onclick="traducir('es')">&#127466;&#127480; Español</button>
+
+        <!-- Contenedor oculto del widget de Google Translate -->
+        <div id="google_translate_element" style="display:none"></div>
+
+        <script>
+            // Configura el traductor: página original en español, idiomas permitidos es y pt
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'es',
+                    includedLanguages: 'es,pt',
+                    autoDisplay: false
+                }, 'google_translate_element');
+            }
+
+            // Cambia el idioma seleccionando el valor en el desplegable oculto de Google
+            function traducir(idioma) {
+                const combo = document.querySelector('.goog-te-combo');
+                if (combo) {
+                    combo.value = idioma;
+                    combo.dispatchEvent(new Event('change'));
+                }
+            }
+        </script>
+        <!-- Carga el script de Google Translate -->
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+</nav>
+
+<!-- Contenido principal de la página -->
+<main>
+
+    <!-- Sección con el catálogo de empanadas -->
+    <section id="empanadas">
+        <h2>Empanadas</h2>
+        <p>En esta sección, encontrarás todas nuestras empanadas.</p>
+
+        <!-- Producto 1 -->
+        <!-- Cada producto va en un article con su nombre, descripción y tabla -->
+        <article>
+            <!-- Nombre del producto -->
+            <h3>Empanada tradicional de atún</h3>
+            <p>Empanada casera elaborada con masa crujiente y un jugoso relleno de atún, pimiento y cebolla pochada.</p>
+            <!-- Tabla con tres columnas: ingredientes, elaboración y fotografía -->
+            <table>
+                <!-- Fila de encabezados -->
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <!-- Fila con los datos del producto -->
+                <tr>
+                    <td>
+                        <!-- Lista de ingredientes -->
+                        <ul>
+                            <li>Harina de trigo</li>
+                            <li>Atún en conserva</li>
+                            <li>Pimiento rojo y verde</li>
+                            <li>Cebolla</li>
+                            <li>Tomate frito</li>
+                            <li>Aceite de oliva y sal</li>
+                        </ul>
+                    </td>
+                    <!-- Celda con el proceso de elaboración -->
+                    <td>
+                        <p>Se sofríen las verduras y se mezclan con el atún. Se estira la masa en dos capas, se coloca el relleno, se sellan los bordes y se hornea a 180 ºC durante 35 minutos.</p>
+                    </td>
+                    <!-- Celda con la imagen-->
+                    <td>
+                        <img src="img/empanada_atun.jpg" alt="Empanada tradicional de atún"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- El resto de productos siguen exactamente la misma estructura -->
+        <!-- Producto 2 -->
+        <article>
+            <h3>Empanada de carne picada estofada</h3>
+            <p>Jugosa empanada rellena de carne picada de ternera y cerdo con sofrito de verduras y especias naturales.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo y manteca</li>
+                            <li>Carne picada mixta (ternera y cerdo)</li>
+                            <li>Cebolla y pimiento rojo</li>
+                            <li>Huevo duro picado</li>
+                            <li>Especias, aceite y sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se cocina el sofrito con la carne picada y se añade el huevo duro. Se rellena la base de la masa, se cubre, se adorna con tiras de masa y se hornea a 190 ºC durante 40 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/empanadas_carne.jpg" alt="Empanada de carne picada estofada"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 3 -->
+        <article>
+            <h3>Empanada gallega de bacalao con pasas</h3>
+            <p>Receta tradicional de contraste dulce y salado con migas de bacalao desmigado y pasas sultanas.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo de fuerza</li>
+                            <li>Bacalao desalado y desmigado</li>
+                            <li>Pasas sultanas</li>
+                            <li>Mucha cebolla pochada suavemente</li>
+                            <li>Pimentón dulce y aceite de oliva</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se pocha abundante cebolla a fuego lento con pimentón. Se junta con el bacalao y las pasas. Se ensambla la empanada con masa fina y se hornea a 200 ºC durante 35 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/empanada_bacalao.jpg" alt="Empanada gallega de bacalao con pasas"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+        <!-- Producto 4 -->
+        <article>
+            <h3>Empanada de pollo, pimientos y queso</h3>
+            <p>Empanada de pechuga de pollo deshilachada con sofrito de pimientos y queso fundido caramelizado.</p>
+            <table>
+                <tr>
+                    <th>Ingredientes</th>
+                    <th>Elaboración</th>
+                    <th>Fotografía</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Harina de trigo</li>
+                            <li>Pechuga de pollo cocida y deshilachada</li>
+                            <li>Pimientos asados</li>
+                            <li>Queso Havarti o Gouda en lonchas</li>
+                            <li>Cebolla, aceite de oliva y sal</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <p>Se mezcla el pollo con el sofrito de pimientos asados. Sobre la capa inferior de masa se coloca el relleno y sobre este las lonchas de queso. Se cierra la empanada y se hornea a 180 ºC durante 35 minutos.</p>
+                    </td>
+                    <td>
+                        <img src="img/empanada_queso_pimiento_pollo.jpg" alt="Empanada de pollo, pimientos y queso"/>
+                    </td>
+                </tr>
+            </table>
+        </article>
+
+    </section>
+
+</main>
+
+<!-- Pie de página con el copyright -->
+<footer>
+    <p>&copy; 2026 Migas Amigas - Panadería familiar</p>
+    <p>Pan artesanal, pastelería-bollería y empanadas</p>
+</footer>
+
+</body>
+</html>
